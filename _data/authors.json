@@ -1,0 +1,24 @@
+{
+    "authors":{
+        "author": [
+            {
+                "firstName": "Christian",
+                "lastName": "Scharensberger",
+                "name": "Christian",
+                "github": "theSchabi"
+            },
+            {
+                "firstName": "Tobias",
+                "lastName": "Groza",
+                "name": "tobiasGroza",
+                "github": "TobiGr"
+            },
+            {
+                "firstName": "Tobias",
+                "lastName": "Groza",
+                "name": "emil",
+                "github": "TobiGr"
+            }
+        ]
+    }
+}
