@@ -3,31 +3,14 @@
     
     <!-- Prevent search CSS transition on window resize -->
     <script>
-        var windowWidth = window.outerWidth;
-
+        var windowWidth = window.innerWidth;
         document.getElementsByTagName("BODY")[0].onresize = function(){
-            console.log(windowWidth + " " + window.outerWidth);
-            if(windowWidth != window.outerWidth){
-                $('.search-input').each(function(){
-                console.log($(this).css('display'));
-                    if($(this).css('display') != 'none'){
-                        var a = $(this).css('display');
-                        $(this).css('display', 'none');
-                        $(this).css('display', a);
-                    }
-                });
+            /* Only necessary when the user leaves the mobile size */
+            if(windowWidth < window.innerWidth && windowWidth < 767){
+                document.getElementById("navigation-search-input").classList.add("noTransition");
+                setTimeout(function(){ document.getElementById("navigation-search-input").classList.remove("noTransition");}, 900);
             }
-                
-                /*var s = document.getElementsByClassName("search-input");
-                for(var i = 0; i < s.length; i++)
-                {
-                    s.item(i).transition = "all 0s";
-                    console.log(s.transition);
-                }
-            }
-            console.log(windowWidth + " " + window.outerWidth);
-            windowWidth = window.outerWidth;
-            console.log(windowWidth + " " + window.outerWidth + "\n ---");*/
+            windowWidth = window.innerWidth;
         };
 
     </script>

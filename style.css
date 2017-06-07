@@ -616,6 +616,7 @@ strong.extra {
     }
     li.search-container {
         margin: auto 0;
+        max-width: 300px;
     }
     li.search-container a {
         padding: 0 15px;
@@ -628,7 +629,7 @@ strong.extra {
     .input-group .form-control.search-input {
         float: right;
         width:0;
-        transition: width 0.65s ease-out 0s, padding 0.0s ease-out 0.65s, border 0s linear 0.7s;
+        transition: width 0.65s ease-out 0.75s, padding 0.0s ease-out 1.4s, border 0s linear 1.45s;
         padding: 0;
         border: 0px solid rgb(204, 204, 204);
     }
@@ -653,4 +654,7 @@ div.search-container input:focus {
     border: 1px solid #AA1D1D;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 10px rgba(170,29,29,0.95);
     box-shadow: none;
+}
+.noTransition {
+    transition: all 0s !important;
 }
