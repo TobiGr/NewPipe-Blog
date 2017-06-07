@@ -606,3 +606,51 @@ strong.extra {
     background-color: #f3eff2;
     border-color: #d0cdcd;
 }
+
+/* Search */
+
+@media (min-width: 767px){
+    .nav.navbar-nav {
+        display: flex;
+        justify-content: center;
+    }
+    li.search-container {
+        margin: auto 0;
+    }
+    li.search-container a {
+        padding: 0 15px;
+    }
+    li.search-container button, li.search-container button:hover, li.search-container button:hover:active, li.search-container button:active, li.search-container button:focus {
+        background: none;
+        color: white;
+        border-width: 0px;
+    }
+    .input-group .form-control.search-input {
+        float: right;
+        width:0;
+        transition: width 0.65s ease-out 0s, padding 0.0s ease-out 0.65s, border 0s linear 0.7s;
+        padding: 0;
+        border: 0px solid rgb(204, 204, 204);
+    }
+    .input-group .form-control.search-input:hover, .input-group .form-control.search-input:focus, .input-group .form-control.search-input:active, .input-group:hover .form-control.search-input {
+        width: 100%;
+        padding: 6px 12px;
+        border: 1px solid rgb(204, 204, 204);
+        transition: width 0.65s ease-out 0s, padding 0.0s ease-in 0.0s, border 0s linear 0.0s;
+    }
+}
+div.search-container {
+    margin-bottom: 15px;
+}
+div.search-container button:hover {
+    background: #f3eff2;
+    color: #AA1D1D;
+}
+div.search-container button:active, div.search-container button:focus, div.search-container button:hover:active {
+    color: #AA1D1D;
+}
+div.search-container input:focus {
+    border: 1px solid #AA1D1D;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 10px rgba(170,29,29,0.95);
+    box-shadow: none;
+}

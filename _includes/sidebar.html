@@ -8,6 +8,20 @@
         <a href="#" class="list-group-item">Link</a>
         <a href="#" class="list-group-item">Link</a>
     </div>
+
     <div class="clearfix"></div>
+    <div class="search-container">
+        <form action="{{ site.baseurl }}" method="get">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </span>
+                <input type="text" class="form-control" id="search-box"  name="s" placeholder="Search for...">
+            </div><!-- input-group -->
+        </form>
+    </div>
+
+    <div class="clearfix"></div>
+
     <div class="image-puffer"></div>
 </div>
