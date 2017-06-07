@@ -1,5 +1,36 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ site.baseurl  }}/bootstrap/js/bootstrap.min.js"></script>
     
+    <!-- Prevent search CSS transition on window resize -->
+    <script>
+        var windowWidth = window.outerWidth;
+
+        document.getElementsByTagName("BODY")[0].onresize = function(){
+            console.log(windowWidth + " " + window.outerWidth);
+            if(windowWidth != window.outerWidth){
+                $('.search-input').each(function(){
+                console.log($(this).css('display'));
+                    if($(this).css('display') != 'none'){
+                        var a = $(this).css('display');
+                        $(this).css('display', 'none');
+                        $(this).css('display', a);
+                    }
+                });
+            }
+                
+                /*var s = document.getElementsByClassName("search-input");
+                for(var i = 0; i < s.length; i++)
+                {
+                    s.item(i).transition = "all 0s";
+                    console.log(s.transition);
+                }
+            }
+            console.log(windowWidth + " " + window.outerWidth);
+            windowWidth = window.outerWidth;
+            console.log(windowWidth + " " + window.outerWidth + "\n ---");*/
+        };
+
+    </script>
+    
 </body>
 </html>
