@@ -661,3 +661,6 @@ div.search-container input:focus {
 .noTransition {
     transition: all 0s !important;
 }
+.category.post-preview {
+    margin-bottom: 15px;
+}
