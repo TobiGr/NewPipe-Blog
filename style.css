@@ -595,9 +595,6 @@ strong.extra {
     border-left: 2px solid #AA1D1D;
     padding-left: 13px;
 }
-.pagination-container {
-    /*text-align: center;*/
-}
 .pagination > li > a {
     color: #CD322E;
 }
@@ -606,6 +603,12 @@ strong.extra {
     background-color: #f3eff2;
     border-color: #d0cdcd;
 }
+@media (max-width: 767px){
+    .sidebar {
+        border-top: 2px solid white;
+    }
+}
+
 
 /* Search */
 
@@ -619,7 +622,7 @@ strong.extra {
         max-width: 300px;
     }
     li.search-container a {
-        padding: 0 15px;
+        padding: 0;
     }
     li.search-container button, li.search-container button:hover, li.search-container button:hover:active, li.search-container button:active, li.search-container button:focus {
         background: none;

@@ -15,7 +15,7 @@
 
       searchResults.innerHTML = appendString;
     } else {
-      searchResults.innerHTML = '<div class="container">No results found</div>';
+      searchResults.innerHTML = '<br><p class="text-center"><i class="fa fa-3x fa-meh-o" aria-hidden="true"></i><br><br>No results found</p><br>';
     }
   }
 
