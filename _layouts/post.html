@@ -23,6 +23,14 @@
                         {{ content }}
                     </div>
 
+                    <div class="post-categories">
+                        See also: 
+                        {% for category in page.categories %}
+                        <a href="{{ site.baseurl/}}{{ category | slugize }}"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ category }}</a>
+                        {% unless forloop.last %}&nbsp;|&nbsp;{% endunless %}
+                        {% endfor %}
+                    </div>
+
                 {% if site.disqus.shortname %}
                     {% include disqus_comments.html %}
                 {% endif %}
