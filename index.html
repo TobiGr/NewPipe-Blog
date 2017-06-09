@@ -1,3 +1,6 @@
+---
+permalink: /
+---
 <!DOCTYPE html>
 <html>
 <head>
@@ -399,7 +402,7 @@
 
         </div>
     </div> <!-- second text box -->
-    
+
     <!-- news -->
     <div class="news-container">
         <div class="container container-double ">
@@ -410,6 +413,48 @@
                     <h3 class="text-center">News</a></h3>
                 </div>
             </div>
+
+            <p class="text-center">
+                <strong class="extra">Latest article from our <a href="blog/">blog</a></strong>
+            </p>
+            
+            {% for post in site.posts limit: 1 %}
+            <!-- blog -->
+            <div class="blog" style="height: auto">
+                <div class="row is-flex">
+
+                    <!-- post-content -->
+                    <div class="col-xs-12 col-md-8 col-md-push-4 post-content">
+                        <div class="post-content-inner">
+                            <p><strong class="extra">{{ post.title }}</strong></p>
+                            {{ post.content | truncatewords:100 }}
+                            <p class="read-more"><strong><a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>&nbsp; Read more</a></strong></p>
+                        </div>
+                    </div> <!-- post-content -->
+
+                    <!-- post-info -->
+                    <div class="col-xs-12 col-md-4 col-md-pull-8 post-info">
+                        <div class="post-info-head">
+                            <div class="post-info-head-image pull-left" >
+                                <img src="{{ site.data.people[post.author].thumb }}" class="img-circle img-responsive" />
+                            </div>
+                            <div class="post-info-head-text pull-left">
+                                <span>{{ post.author }}<br>{{ post.date | date_to_string }}</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="post-info-tags">
+                            <p><strong>Categories</strong></p>
+                            <br>
+                            {% for category in post.categories %}
+                            <p><a href="{{ site.baseurl }}/blog/{{ category | slugsize }}"><i class="fa fa-tag" aria-hidden="true"></i>{{ category }}</a></p>
+                            {% endfor %}
+                        </div>
+                    </div> <!-- post-info -->
+                    
+                </div>
+            </div> <!-- blog -->
+            {% endfor %}
 
             <!-- slides -->
             <div class="row">
