@@ -34,4 +34,4 @@ exclude:
   - Gemfile.lock
   - .htacess
   
-permalink: /:categories/:title/
+permalink: /blog/:categories/:title/

@@ -17,7 +17,7 @@
                 {{ post.content | truncatewords:100}}<br>
                 <a href="{{ post.url }}">Read more...</a><br><br>
                 {% for category in post.categories %}
-                <a href="{{ site.baseurl }}{{ category | slugize }}"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ category }}</a>
+                <a href="{{ site.baseurl }}/blog/{{ category | slugize }}"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ category }}</a>
                 {% unless forloop.last %}&nbsp;|&nbsp;{% endunless %}
                 {% endfor %}
             </div>

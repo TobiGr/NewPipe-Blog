@@ -5,4 +5,5 @@
 title: a free YouTube client - HOME
 layout: temp5
 description: Welcome to NewPipe!
+permalink: /blog/
 ---
