@@ -1,8 +1,11 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ site.baseurl  }}/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Prevent search CSS transition on window resize -->
+    <!-- Search optimations -->
     <script>
+        
+        /* Prevent search CSS transition on window resize */
+        
         var windowWidth = window.innerWidth;
         document.getElementsByTagName("BODY")[0].onresize = function(){
             /* Only necessary when the user leaves the mobile size */
@@ -12,7 +15,17 @@
             }
             windowWidth = window.innerWidth;
         };
-
+        
+        /* Prevent search submit when search field is empty. Important for touch devices
+        with medium or large screens because search input textfield is hidden when not focused */
+        
+        $(".nav .search-form").submit(function(e){
+            if($(".nav .search-input").val().replace(/ /g, '').length === 0){
+                e.preventDefault();
+                $(".nav .search-input").addClass("invalid-input");
+                setTimeout(function(){ $(".nav .search-input").removeClass("inavlid-input");}, 10500);
+            }
+        });
     </script>
 
 </body>
