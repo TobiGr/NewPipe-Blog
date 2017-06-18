@@ -10,7 +10,7 @@
 
             <div class="extra-space"></div>
 
-            {% for post in site.posts limit: 4 %}
+            {% for post in paginator.posts %}
             {% assign author = site.data.people[post.author] %}
             <!--{{ post.author }}-->
             <div class="border-box">
@@ -27,28 +27,36 @@
 
             <div class="clearfix"></div>
 
+            {% if paginator.total_pages > 1 %}
             <nav aria-label="Page navigation" class="pagination-container text-center" >
-              <ul class="pagination">
-                <li>
-                  <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                  <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
-              </ul>
+                <ul class="pagination">
+                    {% if paginator.previous_page %}
+                    <li><a href="{{ paginator.previous_page_path }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    {% else %}
+                    <li><a aria-label="Previous" class="disabled"><span aria-hidden="true">&laquo;</span></a></li>
+                    {% endif %}
+
+                    {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                    <li><a class="active disabled">{{ page }}</a></li>
+                    {% elsif page == 1 %}
+                    <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+                    {% else %}
+                    <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+    
+                    {% if paginator.next_page %}
+                    <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"  aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                    {% else %}
+                    <li><a class="disabled"><span aria-hidden="true">&raquo;</span></a></li>
+                    {% endif %}
+                </ul>
             </nav>
 
             <div class="clearfix"></div>
-            
+            {% endif %}
+
             <div class="image-puffer"></div>
         </div>
         

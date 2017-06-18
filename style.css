@@ -601,10 +601,13 @@ strong.extra {
 .pagination > li > a {
     color: #CD322E;
 }
-.pagination > li > a:hover {
+.pagination > li > a:hover, .pagination > li > a.active {
     color: #AA1D1D;
     background-color: #f3eff2;
     border-color: #d0cdcd;
+}
+.pagination > li > a.disabled {
+    cursor: default;
 }
 @media (max-width: 767px){
     .sidebar {
