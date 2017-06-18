@@ -16,7 +16,7 @@ layout: default
                   <p>{{ page.content }}</p>
                 {% endunless %}
 
-                {% for post in site.categories.[page.category] %}
+                {% for post in site.categories[page.category] %}
                 <div class="category post-preview">
                     <a href="{{ post.url | prepend: site.baseurl }}">
                         <h4 class="post-title">            

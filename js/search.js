@@ -13,16 +13,17 @@
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
         appendString += '<div class="border-box"><h4><a href="' + item.url + '">' + item.title + '</a></h4>';
-        appendString += '<span>' + item.date+ ', by ' + item.author + '</span><br><br>';
-        appendString += item.content.split(/\s+/).slice(0,100).join(" ") + '<br>';
-        appendString += '<a href="' + item.url + '">Read more...</a>';
+        appendString += '<p><span>' + item.date+ ', by ' + item.author + '</span></p><br>';
+        appendString += item.content.split(/\s+/).slice(0,100).join(" ") + '...<br>';
+        appendString += '<p><a href="' + item.url + '">Read more...</a></p>';
         if(item.category.length != 0){
-            appendString += "<br><br>";
-        }
-        for(var c = 0; c < item.category.length; c++){
-            appendString += '<a href="/' + siteBaseUrl +  item.category[c].toLowerCase() + '"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;' +  item.category[c] + '</a>';
-            if(item.category.length - c != 1) //not the last item
-                appendString += " &nbsp;|&nbsp; ";
+            appendString += '<p class="categories">';
+            for(var c = 0; c < item.category.length; c++){
+                appendString += '<a href="/' + siteBaseUrl +  item.category[c].toLowerCase() + '"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;' +  item.category[c] + '</a>';
+                if(item.category.length - c != 1) //not the last item
+                    appendString += " &nbsp;|&nbsp; ";
+            }
+            appendString += "</p>";
         }
         appendString += "</div>";
       }
@@ -62,7 +63,7 @@
       this.field('id');
       this.field('title', { boost: 10 });
       this.field('author');
-      this.field('category'), { boost: 5 });
+      this.field('category', { boost: 5 });
       this.field('date');
       this.field('content');
     });

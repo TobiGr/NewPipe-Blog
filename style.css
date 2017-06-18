@@ -76,7 +76,7 @@ body {
 .f-droid {
     width: 160px;
 }
-a:hover {
+a:hover, a:focus {
     text-decoration: none;
 }
 
@@ -571,6 +571,9 @@ strong.extra {
     padding-right: 14px;*/
     border: 3px solid #AA1D1D;
     padding: 14px;
+}
+.border-box .categories {
+    margin-top: 15px;
 }
 @media (max-width: 767px){
     .single-post, .post-collection {
