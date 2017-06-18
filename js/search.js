@@ -2,7 +2,7 @@
 
 ---
 
-(function() {
+
     var siteBaseUrl = "{{ site.baseurl }}";
   function displaySearchResults(results, store) {
     var searchResults = document.getElementById('search-results');
@@ -45,8 +45,13 @@
       }
     }
   }
-
-  var searchTerm = getQueryVariable('s');
+  function search(type){
+  if(type == "manual")
+      searchTerm = document.getElementById('search-box').value;
+  else if(type == "onload")
+    var searchTerm = getQueryVariable('s');
+  else
+    var searchTerm = getQueryVariable('s');
 
   if (searchTerm) {
     document.getElementById('search-box').setAttribute("value", searchTerm);
@@ -57,7 +62,7 @@
       this.field('id');
       this.field('title', { boost: 10 });
       this.field('author');
-      this.field('category');
+      this.field('category'), { boost: 5 });
       this.field('date');
       this.field('content');
     });
@@ -76,4 +81,5 @@
       displaySearchResults(results, window.store); // We'll write this in the next section
     }
   }
-})();
+  }
+  search("onload");
