@@ -551,6 +551,9 @@ strong.extra {
 .single-post a:hover, .post-collection a:hover {
     color: #AA1D1D;
 }
+.single-post article {
+    margin-bottom: 15px;
+}
 .border-box {
     border: 2px solid white;
     margin-bottom: 20px;
