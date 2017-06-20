@@ -1,11 +1,3 @@
-/* sticky footer */
-/*html, body {height: 100%; padding: 0; margin: 0; }
-body { display: table; width: 100%; height: 100%;}
-.navbar-wrapper,.single-post,.post-collection,.footer{display: table-row;}
-.navbar-wrapper, .footer { height: 1px; }
-.single-post,.post-collection { height: auto; }
-.content, .border-right {height:100%}*/
-
 body, html {
     height: 100%;
 }
@@ -672,4 +664,22 @@ div.search-container input:focus {
 }
 .category.post-preview {
     margin-bottom: 15px;
+}
+
+
+/* Sticky footer */
+
+#page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#header, #footer {
+  flex: none;
+}
+.single-post, .post-collection {
+  flex: 1 0 auto;
+}
+.height-full {
+    height: 100%;
 }
