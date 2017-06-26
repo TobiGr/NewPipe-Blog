@@ -590,9 +590,26 @@ strong.extra {
 }
 .sidebar .list-group a:hover {
     color: #CD322E;
-    border-left: 2px solid #AA1D1D;
-    padding-left: 13px;
 }
+.sidebar .list-group a .icon {
+    width: 0;
+    float: left;
+    overflow: hidden;
+    height: 1.42857143;
+    -webkit-transition: width 0s ease-in-out;
+    -moz-transition: width 0s ease-in-out;
+    -o-transition: width 0s ease-in-out;
+    transition: width 0s ease-in-out;
+}
+.sidebar .list-group a:hover .icon {
+    width: 15px;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 0.1s ease-in-out;
+}
+
+/* Pagination */
 .pagination > li > a {
     color: #CD322E;
 }
