@@ -9,7 +9,7 @@ description: Welcome to NewPipe!
 {% for post in paginator.posts %}
 {% assign author = site.data.people[post.author] %}
 <!--{{ post.author }}-->
-<div class="border-box">
+<div class="border-box anchor-right-full-parent">
     <h4><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h4>
     <p><span>{{ post.date | date_to_string }}, by {{ post.author }}</span></p><br>
     {{ post.content | truncatewords:100}}
@@ -20,6 +20,7 @@ description: Welcome to NewPipe!
         {% unless forloop.last %}&nbsp;|&nbsp;{% endunless %}
         {% endfor %}
     </p>
+    <div class="anchor-right-full"></div>
 </div>
 {% endfor %}
 
