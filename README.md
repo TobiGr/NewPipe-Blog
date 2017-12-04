@@ -3,7 +3,7 @@ NewPipe Blog Generator
 
 Repo for the [NewPipe Blog](https://newpipe.schabi.org/blog/).
 
-The blog is based on [Bootstrap](https://getbootstrap.com) and [Jekyll](https://jekyllrb.com/).
+The blog is based on [Bootstrap](https://getbootstrap.com) 3.3.7 and [Jekyll](https://jekyllrb.com/) 3.6.2.
 
 Development
 ==============
