@@ -200,6 +200,7 @@ a:hover, a:focus {
 }*/
 .navbar-full-bg {
     background: #AA1D1D;
+    background: rgba(170,29,29,0.95)
 }
 .navbar-inverse {
     background: none;
@@ -788,7 +789,7 @@ div.search-container button:hover {
 div.search-container button:active, div.search-container button:focus, div.search-container button:hover:active {
     color: #AA1D1D;
 }
-div.search-container input:focus {
+div.search-container button:focus, div.search-container input:focus {
     border: 1px solid #AA1D1D;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 10px rgba(170,29,29,0.95);
     box-shadow: none;
@@ -807,6 +808,7 @@ div.search-container input:focus {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: #d0cdcd;
 }
 #header, #footer {
   flex: none;
