@@ -1,0 +1,27 @@
+{% include head.html %}
+
+{% include nav.html %}
+
+<div class="post-collection height-full-parent">
+    <div class="container height-full-parent height-full">
+        <div class="row is-flex height-full-child">
+            <div class="col-xs-12 col-sm-8 col-md-9 single-post border-left border-right">
+
+                <div class="extra-space"></div>
+
+                {{ content }}
+
+                <div class="clearfix"></div>
+
+                <div class="image-puffer"></div>
+            </div>
+
+            {% include sidebar.html %}
+
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}
+
+{% include page_end.html %}

@@ -583,6 +583,13 @@ strong.extra {
         border-left: 2px solid #f3eff2;
         border-left: 2px solid white;
     }
+    .col-md-9.border-left {
+        margin-left: 15px;
+        width: calc(75% - 15px);
+        -webkit-box-shadow: -4px 0px 4px 0px rgba(0,0,0,0.175);
+        -moz-box-shadow: -4px 0px 4px 0px rgba(0,0,0,0.175);
+        box-shadow: -4px 0px 4px 0px rgba(0,0,0,0.175);
+    }
     .border-right {
         border-right: 2px solid #d0cdcd;
         border-right: 2px solid #f3eff2;
@@ -592,6 +599,11 @@ strong.extra {
         -webkit-box-shadow: 4px 0px 4px 0px rgba(0,0,0,0.175);
         -moz-box-shadow: 4px 0px 4px 0px rgba(0,0,0,0.175);
         box-shadow: 4px 0px 4px 0px rgba(0,0,0,0.175);
+    }
+    .col-md-9.border-left.border-right {
+        -webkit-box-shadow: -4px 0px 4px 0px rgba(0,0,0,0.175), 4px 0px 4px 0px rgba(0,0,0,0.175);
+        -moz-box-shadow: -4px 0px 4px 0px rgba(0,0,0,0.175), 4px 0px 4px 0px rgba(0,0,0,0.175);
+        box-shadow: -4px 0px 4px 0px rgba(0,0,0,0.175), 4px 0px 4px 0px rgba(0,0,0,0.175);
     }
     .image-puffer {
         display: block;
@@ -618,6 +630,10 @@ strong.extra {
 }
 .post.single-article {
     margin-bottom: 30px;
+}
+.single-post {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .border-box {
     border: 2px solid white;
