@@ -631,6 +631,9 @@ strong.extra {
 .post.single-article {
     margin-bottom: 30px;
 }
+.post-title {
+    color: #cd201f;
+}
 .single-post {
     padding-left: 30px;
     padding-right: 30px;
